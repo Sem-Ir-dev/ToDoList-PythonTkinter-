@@ -16,15 +16,18 @@ class Window:
         self.root['bg'] = self.white
 
     def draw_widget(self):
-        def bt_add():
+        def bt_add_press():
             e_text = e_input.get()
             if e_text:
                 l_list.insert(END, e_text)
                 e_input.delete(0, END)
 
-        def bt_delete():
+        def bt_delete_press():
             selected = l_list.curselection()
             l_list.delete(selected)
+
+        def bt_clear_press():
+            l_list.delete(0, END)
 
         # ======== Label ==========
         l_title = Label(self.root, text='ToDo List', font='ComicSansMs 18', bg=self.white)
@@ -44,11 +47,15 @@ class Window:
         e_input.place(x=10, y=370)
 
         # ======== Button ==========
-        bt_delete = Button(self.root, text='Delete', command=bt_delete, bg=self.bt_bg, fg=self.white, bd=0,
+        bt_delete = Button(self.root, text='Delete', command=bt_delete_press, bg=self.bt_bg, fg=self.white, bd=0,
                            font='ComicSansMS 12')
         bt_delete.place(x=525, y=60)
 
-        bt_add = Button(self.root, text='Add', command=bt_add, bg=self.bt_bg, fg=self.white, bd=0,
+        bt_clear = Button(self.root, text='Clear', command=bt_clear_press, bg=self.bt_bg, fg=self.white, bd=0,
+                           font='ComicSansMS 12')
+        bt_clear.place(x=525, y=95)
+
+        bt_add = Button(self.root, text='Add', command=bt_add_press, bg=self.bt_bg, fg=self.white, bd=0,
                            font='ComicSansMS 12')
         bt_add.place(x=525, y=366)
 
