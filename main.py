@@ -1,4 +1,3 @@
-# ToDo list
 from tkinter import *
 
 
@@ -48,14 +47,14 @@ class Window:
 
         # ======== Button ==========
         bt_delete = Button(self.root, text='Delete', command=bt_delete_press, bg=self.bt_bg, fg=self.white, bd=0,
-                           font='ComicSansMS 12')
+                           font='ComicSansMS 12', width=6)
         bt_delete.place(x=525, y=60)
 
-        bt_clear = Button(self.root, text='Clear', command=bt_clear_press, bg=self.bt_bg, fg=self.white, bd=0,
+        bt_clear = Button(self.root, text='Clear', command=bt_clear_press, bg=self.bt_bg, fg=self.white, bd=0, width=6,
                            font='ComicSansMS 12')
         bt_clear.place(x=525, y=95)
 
-        bt_add = Button(self.root, text='Add', command=bt_add_press, bg=self.bt_bg, fg=self.white, bd=0,
+        bt_add = Button(self.root, text='Add', command=bt_add_press, bg=self.bt_bg, fg=self.white, bd=0, width=6,
                            font='ComicSansMS 12')
         bt_add.place(x=525, y=366)
 
